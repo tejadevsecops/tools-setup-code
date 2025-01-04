@@ -94,6 +94,7 @@ resource "vault_generic_secret" "payment" {
 }
 EOT
 }
+
 resource "vault_generic_secret" "mysql" {
   path = "${vault_mount.roboshop-dev.path}/mysql"
   data_json = <<EOT
@@ -102,6 +103,7 @@ resource "vault_generic_secret" "mysql" {
 }
 EOT
 }
+
 resource "vault_generic_secret" "rabbitmq" {
   path = "${vault_mount.roboshop-dev.path}/rabbitmq"
   data_json = <<EOT
@@ -112,6 +114,16 @@ resource "vault_generic_secret" "rabbitmq" {
 EOT
 }
 
+resource "vault_generic_secret" "dispatch" {
+  path = "${vault_mount.roboshop-dev.path}/dispatch"
+  data_json = <<EOT
+{
+  "AMQP_HOST" : "rabbitmq-dev.tejadevopsb81.icu",
+  "AMQP_USER" : "roboshop",
+  "AMQP_PASS" : "roboshop123"
+}
+EOT
+}
 
 #########################################
 
