@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "terraformstate-devsecops-b81"
-    key    = "vault-secrets/terraform.tfstate"
+    key    = "org/vault-secrets/terraform.tfstate"
     region = "us-east-1"
 
   }
