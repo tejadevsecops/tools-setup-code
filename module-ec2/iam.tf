@@ -1,4 +1,6 @@
 resource "aws_iam_role" "role" {
+
+  count = length(var.policy_list) > 0 ? 1 : 0
   name = "${var.tool_name}-role"
 
   # Terraform's "jsonencode" function converts a
@@ -16,7 +18,28 @@ resource "aws_iam_role" "role" {
     ]
   })
 
+  inline_policy {
+    name = "${var.tool_name}inline-role"
+
+    policy = jsonencode({
+      Version = "2012-10-17"
+      Statement = [
+        {
+          Action   = var.policy_list
+          Effect   = "Allow"
+          Resource = "*"
+        },
+      ]
+    })
+  }
+
   tags = {
     Name = "${var.tool_name}-role"
   }
+}
+
+resource "aws_iam_instance_profile" "instance_profile" {
+  count = length(var.policy_list) > 0 ? 1 : 0
+  name = "${var.tool_name}-role"
+  role = aws_iam_role.role[0].name
 }
