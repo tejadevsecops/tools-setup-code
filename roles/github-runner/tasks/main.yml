@@ -76,3 +76,8 @@
   ansible.builtin.dnf:
     name: kubectl
     state: installed
+
+- name: Install Docker
+  ansible.builtin.dnf:
+    name: docker
+    state: installed
