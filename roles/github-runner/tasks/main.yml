@@ -81,3 +81,8 @@
   ansible.builtin.dnf:
     name: docker
     state: installed
+
+- name: LVN Layout
+  ansible.builtin.include_roles:
+    name: common
+    tasks_from: lvm
