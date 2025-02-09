@@ -32,15 +32,15 @@ resource "vault_generic_secret" "frontend" {
   "user_url":   "http://user-dev.tejadevopsb81.icu:8080/",
   "shipping_url":   "http://shipping-dev.tejadevopsb81.icu:8080/",
   "payment_url":   "http://payment-dev.tejadevopsb81.icu:8080/",
-  "CATALOGUE_HOST" : "catalogue-dev.tejadevopsb81.icu",
+  "CATALOGUE_HOST" : "catalogue",
   "CATALOGUE_PORT" : 8080,
-  "USER_HOST" : "user-dev.tejadevopsb81.icu",
+  "USER_HOST" : "user",
   "USER_PORT" : 8080,
-  "CART_HOST" : "cart-dev.tejadevopsb81.icu",
+  "CART_HOST" : "cart",
   "CART_PORT" : 8080,
-  "SHIPPING_HOST" : "shipping-dev.tejadevopsb81.icu",
+  "SHIPPING_HOST" : "shipping",
   "SHIPPING_PORT" : 8080,
-  "PAYMENT_HOST" : "payment-dev.tejadevopsb81.icu",
+  "PAYMENT_HOST" : "payment",
   "PAYMENT_PORT" : 8080
 }
 EOT
