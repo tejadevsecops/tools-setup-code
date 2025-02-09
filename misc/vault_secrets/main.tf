@@ -61,6 +61,18 @@ resource "vault_generic_secret" "catalogue" {
 EOT
 }
 
+resource "vault_generic_secret" "catalogue-job" {
+  path = "${vault_mount.roboshop-dev.path}/catalogue-job"
+
+  data_json = <<EOT
+{
+  "DB_TYPE": "mongo",
+  "APP_GIT_URL": "https://github.com/roboshop-devops-project-v3/catalogue",
+  "DB_HOST": "mongodb-dev.tejadevopsb81.icu"
+}
+EOT
+}
+
 resource "vault_generic_secret" "user" {
   path = "${vault_mount.roboshop-dev.path}/user"
   data_json = <<EOT
@@ -97,6 +109,20 @@ resource "vault_generic_secret" "shipping" {
 }
 EOT
 }
+
+resource "vault_generic_secret" "shipping-job" {
+  path = "${vault_mount.roboshop-dev.path}/shipping-job"
+  data_json = <<EOT
+{
+  "DB_TYPE": "mysql",
+  "APP_GIT_URL": "https://github.com/roboshop-devops-project-v3/shipping",
+  "DB_HOST": "mysql-dev.tejadevopsb81.icu",
+  "DB_USER": "root",
+  "DB_PASS": "RoboShop@1"
+}
+EOT
+}
+
 
 resource "vault_generic_secret" "payment" {
   path = "${vault_mount.roboshop-dev.path}/payment"
