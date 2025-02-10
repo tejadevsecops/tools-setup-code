@@ -80,7 +80,8 @@ resource "vault_generic_secret" "user" {
 {
   "MONGO": "true",
   "MONGO_URL" : "mongodb://mongodb-dev.tejadevopsb81.icu:27017/users",
-  "REDIS_URL" : "redis://redis-dev.tejadevopsb81.icu:6379"
+  "REDIS_URL" : "redis://redis-dev.tejadevopsb81.icu:6379",
+  "NEW_RELIC_LICENSE_KEY": "120f4d5dc830399694affd865c31e0bcFFFFNRAL"
 }
 EOT
 }
@@ -91,7 +92,8 @@ resource "vault_generic_secret" "cart" {
 {
   "REDIS_HOST": "redis-dev.tejadevopsb81.icu",
   "CATALOGUE_HOST" : "catalogue",
-  "CATALOGUE_PORT" : "8080"
+  "CATALOGUE_PORT" : "8080",
+  "NEW_RELIC_LICENSE_KEY": "120f4d5dc830399694affd865c31e0bcFFFFNRAL"
 }
 EOT
 }
