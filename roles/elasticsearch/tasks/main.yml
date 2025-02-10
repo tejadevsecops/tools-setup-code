@@ -6,6 +6,11 @@
     src: elastic.repo
     dest: /etc/yum.repos.d/elastic.repo
 
+- name: LVN Layout
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: lvm
+
 - name: Install ELK
   ansible.builtin.dnf:
     name:
@@ -29,7 +34,6 @@
     - kibana
     - logstash
     - nginx
-
 
 
 
