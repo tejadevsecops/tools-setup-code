@@ -99,7 +99,7 @@ resource "vault_generic_secret" "shipping" {
   path = "${vault_mount.roboshop-dev.path}/shipping"
   data_json = <<EOT
 {
-  "CART_ENDPOINT": "cart",
+  "CART_ENDPOINT": "cart:8080",
   "DB_HOST" : "mysql-dev.tejadevopsb81.icu",
   "mysql_root_password" : "RoboShop@1",
   "DB_TYPE": "mysql",
