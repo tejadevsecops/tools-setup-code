@@ -138,7 +138,8 @@ resource "vault_generic_secret" "payment" {
   "USER_PORT" : "8080",
   "AMQP_HOST" : "rabbitmq-dev.tejadevopsb81.icu",
   "AMQP_USER" : "roboshop",
-  "AMQP_PASS" : "roboshop123"
+  "AMQP_PASS" : "roboshop123",
+  "NEW_RELIC_LICENSE_KEY": "120f4d5dc830399694affd865c31e0bcFFFFNRAL"
 }
 EOT
 }
