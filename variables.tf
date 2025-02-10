@@ -24,7 +24,7 @@ variable "tools" {
     }
 
     elasticsearch = {
-      port        = {
+      port = {
       elasticsearch = 9200
       nginx         = 80
     }
