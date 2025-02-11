@@ -25,10 +25,10 @@
     src: nginx.conf
     dest: /etc/nginx/nginx.conf
 
-#- name: Copy logstash
-#  ansible.builtin.template:
-#    src: logstash.conf
-#    dest: /etc/logstash/conf.d/logstash.conf
+- name: Copy logstash
+  ansible.builtin.template:
+    src: logstash.conf
+    dest: /etc/logstash/conf.d/logstash.conf
 
 - name: Start ELK
   ansible.builtin.systemd_service:
