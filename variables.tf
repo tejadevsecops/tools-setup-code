@@ -1,5 +1,5 @@
 variable "zone_id" {
-  default = "Z06372633BKYPXSU4MUBQ"
+  default = "Z10165773L4FEVYHDJOSY"
 }
 variable "domain_name" {
   default = "tejadevopsb81.icu"
