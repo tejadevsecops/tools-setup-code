@@ -204,3 +204,14 @@ resource "vault_generic_secret" "elasticsearch" {
 }
 EOT
 }
+
+resource "vault_generic_secret" "sonarqube" {
+  path = "${vault_mount.infra-secrets.path}/sonarqube"
+
+  data_json = <<EOT
+{
+  "username" : "admin",
+  "password" : "admin123"
+}
+EOT
+}
