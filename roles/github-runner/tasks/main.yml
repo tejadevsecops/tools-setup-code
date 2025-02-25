@@ -110,3 +110,8 @@
     dest: /sonar-scanner
     owner: github-runner
     group: github-runner
+
+- name: Install Maven
+  ansible.builtin.dnf:
+    name: maven
+    state: installed
