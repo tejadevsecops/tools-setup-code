@@ -32,15 +32,15 @@ resource "vault_generic_secret" "frontend" {
   "user_url":   "http://user-dev.tejadevopsb81.icu:8080/",
   "shipping_url":   "http://shipping-dev.tejadevopsb81.icu:8080/",
   "payment_url":   "http://payment-dev.tejadevopsb81.icu:8080/",
-  "CATALOGUE_HOST" : "catalogue",
+  "CATALOGUE_HOST" : "catalogue-dev.tejadevopsb81.icu",
   "CATALOGUE_PORT" : 8080,
-  "USER_HOST" : "user",
+  "USER_HOST" : "user-dev.tejadevopsb81.icu",
   "USER_PORT" : 8080,
-  "CART_HOST" : "cart",
+  "CART_HOST" : "cart-dev.tejadevopsb81.icu",
   "CART_PORT" : 8080,
-  "SHIPPING_HOST" : "shipping",
+  "SHIPPING_HOST" : "shipping-dev.tejadevopsb81.icu",
   "SHIPPING_PORT" : 8080,
-  "PAYMENT_HOST" : "payment",
+  "PAYMENT_HOST" : "payment-dev.tejadevopsb81.icu",
   "PAYMENT_PORT" : 8080
 }
 EOT
@@ -91,7 +91,7 @@ resource "vault_generic_secret" "cart" {
   data_json = <<EOT
 {
   "REDIS_HOST": "redis-dev.tejadevopsb81.icu",
-  "CATALOGUE_HOST" : "catalogue",
+  "CATALOGUE_HOST" : "catalogue-dev.tejadevopsb81.icu",
   "CATALOGUE_PORT" : "8080",
   "NEW_RELIC_LICENSE_KEY": "120f4d5dc830399694affd865c31e0bcFFFFNRAL"
 }
@@ -132,9 +132,9 @@ resource "vault_generic_secret" "payment" {
   path = "${vault_mount.roboshop-dev.path}/payment"
   data_json = <<EOT
 {
-  "CART_HOST" : "cart",
+  "CART_HOST" : "cart-dev.tejadevopsb81.icu",
   "CART_PORT" : "8080",
-  "USER_HOST" : "user",
+  "USER_HOST" : "user-dev.tejadevopsb81.icu",
   "USER_PORT" : "8080",
   "AMQP_HOST" : "rabbitmq-dev.tejadevopsb81.icu",
   "AMQP_USER" : "roboshop",
