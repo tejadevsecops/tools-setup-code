@@ -195,23 +195,23 @@ resource "vault_generic_secret" "ssh" {
 EOT
 }
 
-resource "vault_generic_secret" "elasticsearch" {
-  path = "${vault_mount.infra-secrets.path}/elasticsearch"
-
-  data_json = <<EOT
-{
-  "elasticsearch_password" : "4zH*=zdzIl4mGOGdjktA"
-}
-EOT
-}
-
-resource "vault_generic_secret" "sonarqube" {
-  path = "${vault_mount.infra-secrets.path}/sonarqube"
-
-  data_json = <<EOT
-{
-  "username" : "admin",
-  "password" : "admin123"
-}
-EOT
-}
+# resource "vault_generic_secret" "elasticsearch" {
+#   path = "${vault_mount.infra-secrets.path}/elasticsearch"
+#
+#   data_json = <<EOT
+# {
+#   "elasticsearch_password" : "4zH*=zdzIl4mGOGdjktA"
+# }
+# EOT
+# }
+#
+# resource "vault_generic_secret" "sonarqube" {
+#   path = "${vault_mount.infra-secrets.path}/sonarqube"
+#
+#   data_json = <<EOT
+# {
+#   "username" : "admin",
+#   "password" : "admin123"
+# }
+# EOT
+# }
