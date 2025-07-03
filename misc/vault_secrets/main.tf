@@ -267,15 +267,15 @@ resource "vault_generic_secret" "frontend" {
     "cart_url":   "http://cart-dev.tejadevopsb81.icu:8080/",
     "shipping_url":   "http://shipping-dev.tejadevopsb81.icu:8080/",
     "payment_url":   "http://payment-dev.tejadevopsb81.icu:8080/",
-    "CATALOGUE_HOST" : "catalogue-dev.tejadevopsb81.icu",
+    "CATALOGUE_HOST" : "catalogue",
     "CATALOGUE_PORT" : 8080,
-    "USER_HOST" : "user-dev.tejadevopsb81.icu",
+    "USER_HOST" : "user",
     "USER_PORT" : 8080,
-    "CART_HOST" : "cart-dev.tejadevopsb81.icu",
+    "CART_HOST" : "cart",
     "CART_PORT" : 8080,
-    "SHIPPING_HOST" : "shipping-dev.tejadevopsb81.icu",
+    "SHIPPING_HOST" : "shipping",
     "SHIPPING_PORT" : 8080,
-    "PAYMENT_HOST" : "payment-dev.tejadevopsb81.icu",
+    "PAYMENT_HOST" : "payment",
     "PAYMENT_PORT" : 8080
 
   }
@@ -313,7 +313,7 @@ resource "vault_generic_secret" "cart" {
   data_json = <<EOT
   {
     "REDIS_HOST": "redis-dev.tejadevopsb81.icu",
-    "CATALOGUE_HOST":  "catalogue-dev.tejadevopsb81.icu",
+    "CATALOGUE_HOST":  "catalogue",
     "CATALOGUE_PORT":  "8080"
 
   }
@@ -325,7 +325,7 @@ resource "vault_generic_secret" "shipping" {
   data_json = <<EOT
   {
     "User": "roboshop",
-    "CART_ENDPOINT":  "cart-dev.tejadevopsb81.icu:8080",
+    "CART_ENDPOINT":  "cart:8080",
     "DB_HOST":  "mysql-dev.tejadevopsb81.icu",
     "mysql_root_password":  "RoboShop@1",
     "DB_TYPE": "mysql",
@@ -340,9 +340,9 @@ resource "vault_generic_secret" "payment" {
   path = "${vault_mount.roboshop-dev.path}/payment"
   data_json = <<EOT
   {
-    "CART_HOST": "cart-dev.tejadevopsb81.icu",
+    "CART_HOST": "cart",
     "CART_PORT":  "8080",
-    "USER_HOST":  "user-dev.tejadevopsb81.icu",
+    "USER_HOST":  "user",
     "USER_PORT":  "8080",
     "AMQP_HOST":  "rabbitmq-dev.tejadevopsb81.icu",
     "AMQP_USER":  "roboshop",
