@@ -67,34 +67,34 @@
     name: terraform
     state: installed
 
-#- name: Copy Kubernetes repo
-#  ansible.builtin.copy:
-#    src: kubernetes.repo
-#    dest: /etc/yum.repos.d/kubernetes.repo
-#
-#- name: Install kubectl
-#  ansible.builtin.dnf:
-#    name: kubectl
-#    state: installed
-#
-#- name: Install Docker
-#  ansible.builtin.shell: |
-#    curl -o /etc/yum.repos.d/docker.repo https://download.docker.com/linux/rhel/docker-ce.repo
-#    dnf install docker-ce --nobest -y
-#    usermod -a -G docker github-runner
-#    systemctl enable docker
-#    systemctl start docker
-#
-#- name: LVN Layout
-#  ansible.builtin.include_role:
-#    name: common
-#    tasks_from: lvm
-#
-#- name: Install ArgoCD Cli
-#  ansible.builtin.get_url:
-#    url: https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
-#    dest: /bin/argocd
-#    mode: '0755'
+- name: Copy Kubernetes repo
+  ansible.builtin.copy:
+    src: kubernetes.repo
+    dest: /etc/yum.repos.d/kubernetes.repo
+
+- name: Install kubectl
+  ansible.builtin.dnf:
+    name: kubectl
+    state: installed
+
+- name: Install Docker
+  ansible.builtin.shell: |
+    curl -o /etc/yum.repos.d/docker.repo https://download.docker.com/linux/rhel/docker-ce.repo
+    dnf install docker-ce --nobest -y
+    usermod -a -G docker github-runner
+    systemctl enable docker
+    systemctl start docker
+
+- name: LVN Layout
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: lvm
+
+- name: Install ArgoCD Cli
+  ansible.builtin.get_url:
+    url: https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+    dest: /bin/argocd
+    mode: '0755'
 #
 #- name: Sonar Directory
 #  ansible.builtin.file:
